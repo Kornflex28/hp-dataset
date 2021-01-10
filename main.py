@@ -7,30 +7,35 @@ import csv
 if __name__ == "__main__":
 
     str_filter = "[\(\[\{].*?[\)\]\}]"
-    character_names_map = {"Pettigrew":"Peter Pettigrew","Sirius":"Sirius Black", 'Parvati':"Parvati Patil", 'Pansy':"Pansy Parkinson","Dean":"Dean Thomas", "Professor trelawney":"Sybill Trelawney", "Malfoy":"Draco Malfoy", "Lupin":"Remus Lupin", "Molly":"Molly Weasley", "Arthur":"Arthur Weasley","Fudge":"Cornelius Fudge","Marge":"Marge Dursley","Goyle":"Gregory Goyle","Colin":"Collin Creevey","Crabbe":"Vincent Crabbe","Professor McGonagall":"Minerva McGonagall","Lucius":"Lucius Malfoy", "Riddle":"Tom Riddle","Myrtle":"Moaning Myrtle","Madam Pomfrey":"Poppy Pomfrey","Professor Sprout":"Pomona Sprout","Lockhart":"Gilderoy Lockhart","Mr. Weasley":"Arthur Weasley",'Dumbledore': "Albus Dumbledore", "Flint": "Marcus Flint", 'McGonagall': "Minerva McGonagall", 'Hagrid': "Rubeus Hagrid", 'Petunia': "Petunia Dursley", 'Dudley': "Dudley Dursley", 'Vernon': "Vernon Dursley", 'Harry': "Harry Potter", 'Quirrell': "Quirinus Quirrell", 'Ollivander': "Garrick Ollivander", 'Mrs. Weasley': "Molly Weasley", 'George': "George Weasley", 'Fred': "Fred Weasley",
+    character_names_map = {"Barty jr":"Bartemius Crouch Junior","Fleur":"Fleur Delacour","Nigel":"Nigel Wolpert","Viktor":"Viktor Krum","Rita":"Rita Skeeter","Mad-eye":"Alastor Moody","Severus":"Severus Snape","Igor":"Igor Karkaroff","Cho":"Cho Chang","Barty":"Bartemius Crouch","Cedric":"Cedric Diggory","Amos":"Amos Diggory", "Pettigrew":"Peter Pettigrew","Sirius":"Sirius Black",'Padma':"Padma Patil", 'Parvati':"Parvati Patil", 'Pansy':"Pansy Parkinson","Dean":"Dean Thomas", "Professor trelawney":"Sybill Trelawney", "Malfoy":"Draco Malfoy", "Lupin":"Remus Lupin", "Molly":"Molly Weasley", "Arthur":"Arthur Weasley","Fudge":"Cornelius Fudge","Marge":"Marge Dursley","Goyle":"Gregory Goyle","Colin":"Collin Creevey","Crabbe":"Vincent Crabbe","Professor McGonagall":"Minerva McGonagall","Lucius":"Lucius Malfoy", "Riddle":"Tom Riddle","Myrtle":"Moaning Myrtle","Madam Pomfrey":"Poppy Pomfrey","Professor Sprout":"Pomona Sprout","Lockhart":"Gilderoy Lockhart","Mr. Weasley":"Arthur Weasley",'Dumbledore': "Albus Dumbledore", "Flint": "Marcus Flint", 'McGonagall': "Minerva McGonagall", 'Hagrid': "Rubeus Hagrid", 'Petunia': "Petunia Dursley", 'Dudley': "Dudley Dursley", 'Vernon': "Vernon Dursley", 'Harry': "Harry Potter", 'Quirrell': "Quirinus Quirrell", 'Ollivander': "Garrick Ollivander", 'Mrs. Weasley': "Molly Weasley", 'George': "George Weasley", 'Fred': "Fred Weasley",
                            'Ginny': "Ginny Weasley", 'Ron': "Ron Weasley", 'Hermione': "Hermione Granger", 'Neville': "Neville Longbottom", 'Draco': "Draco Malfoy", 'Seamus': "Seamus Finnigan", 'Percy': "Percy Weasley", 'Nick': "Nearly Headless Nick", 'Snape': "Severus Snape", 'Hooch': "Rolanda Hooch", 'Filch': "Argus Filch", 'Oliver': "Oliver Wood", 'Flitwick': "Filius Flitwick", 'Lee': "Lee Jordan", 'Unseen Inhuman Voice': "Voldemort"}
-    filename = "hp3"
+    filename = "hp5"
 
-    # with open(f"scripts/{filename}.txt", encoding="utf8") as f:
-    #     script_lines = list(map(str.strip, re.sub(
-    #         str_filter, "", f.read()).splitlines()))
-    # # print(script_lines)
-    # ch = "Harry"
-    # test = []
-    # l=""
+    with open(f"scripts/{filename}_test.txt", encoding="utf8") as f:
+        script_lines = list(map(str.strip, re.sub(
+            str_filter, "", f.read()).splitlines()))
+    # print(script_lines)
+
+    # dialogs = []
+    # is_speaking,dialog,ch = False,"",""
     # for line in script_lines:
-    #     if ":" in line:
-    #         test.append(l)
-    #         ch = line.split(":",1)[0].strip().capitalize()
-    #         rest = line.split(":",1)[1].strip()
-    #         l = f"{ch}: {rest}"
-    #     else:
-    #         l += f" {line.strip()}"
+    #     if line.isupper():
+    #         if dialog :
+    #             dialogs.append({'ch':ch,'dialog':dialog})
+    #         ch = line.capitalize()
+    #         is_speaking = True
+    #         dialog = ""
+    #     elif not(line):
+    #         is_speaking = False
+    #     elif is_speaking :
+    #         dialog+=" "+line
+    # # print(set(list(map(lambda x: x['ch'], dialogs))))
         
 
-    # with open(f"scripts/{filename}_test.txt","w", encoding="utf8") as f:
-    #     for l in test:
-    #         f.write(l.replace('"',"")+'\n')
+    # with open(f"scripts/{filename}.txt","w", encoding="utf8") as f:
+    #     f.write("Harry Potter and the Order of the Phoenix\n")
+    #     for l in dialogs:
+    #         f.write(f"{l['ch']}:{l['dialog']}\n")
 
 
     with open(f"scripts/{filename}.txt", encoding="utf8") as f:
