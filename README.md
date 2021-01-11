@@ -1,4 +1,4 @@
-![Harry Pooter Film Logo](./img/logo.png)
+![Harry Potter Film Logo](./img/logo.png)
 
 # Harry Potter movies datasets
 ## Content
@@ -14,11 +14,11 @@ This repo contains scripts/transcripts of the Harry Potter movie saga.
     - `box_office`: movie box office in $
 
 - ### *hp_.csv*
-    This file contains several infos of the movies
+    This file contains dialogs of the movie
     - `movie`: movie name
     - `chapter`: chapter of the movie according to the script
     - `character`: character speaking
-    - `dialog`: dialog of the character speeaking
+    - `dialog`: dialog of the character speaking
 
 ## Notes
 
